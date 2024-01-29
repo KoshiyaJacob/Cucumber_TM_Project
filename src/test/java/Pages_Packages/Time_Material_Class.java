@@ -94,15 +94,16 @@ public class Time_Material_Class {
 
         WebElement savedData1 = driver.findElement(By.xpath("//tbody/tr[last()]/td[1]"));
         String editCode = savedData1.getText();
-        Assert.assertEquals(editCode, "Code not updated in Time and Materials");
+        Assert.assertEquals(editCode, new_code);
 
         WebElement savedData2 = driver.findElement(By.xpath("//tbody/tr[last()]/td[4]"));
         String editDescription = savedData2.getText();
-        Assert.assertEquals(editDescription, "Description not updated in Time and Materials");
+        Assert.assertEquals(editDescription, new_description);
 
         WebElement savedData3 = driver.findElement(By.xpath("//tbody/tr[last()]/td[1]"));
         String editPrice = savedData3.getText();
-        Assert.assertEquals(editPrice, "Price not updated in Time and Materials");
+        Assert.assertEquals(editPrice , new_price);
+
 
     }
 
