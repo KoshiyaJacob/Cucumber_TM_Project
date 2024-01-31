@@ -13,13 +13,15 @@ public class Time_Material_Class {
 
         WaitHelper.WaitToBeClickable(driver, "xpath", "//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]", 2);
 
-        WebElement typeCode = driver.findElement(By.xpath("//span[contains(text(),'Material')]"));
-        typeCode.click();
+        // Select Material from type code dropdown
+        WebElement typeCodeDropdown = driver.findElement(By.xpath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]"));
+        typeCodeDropdown.click();
 
         WaitHelper.WaitToBeClickable(driver, "xpath", "//*[@id='TypeCode_listbox']/li[1]", 2);
 
-        WebElement drop_down_button = driver.findElement(By.xpath("//*[@id=\"TypeCode_listbox\"]/li[2]"));
-        drop_down_button.click();
+        WebElement materialOption = driver.findElement(By.xpath("//*[@id='TypeCode_listbox']/li[1]"));
+        materialOption.click();
+
 
         WebElement codeTextBox = driver.findElement(By.id("Code"));
         codeTextBox.sendKeys(Code);
